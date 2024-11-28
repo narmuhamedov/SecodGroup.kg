@@ -1,0 +1,431 @@
+body {
+    font-family: Arial, sans-serif; /*Шрифты*/
+    margin: 0; /*Убирает отступы*/
+    padding: 0; /*Убирает отступы*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 60px;
+    background: url("https://kartinki.pics/uploads/posts/2021-07/1626951149_33-kartinkin-com-p-zadnii-fon-bezhevii-krasivo-35.jpg");
+}
+
+nav {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+#scrollToTop {
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+
+nav ul {
+    list-style: none; /*Убирает маркеры*/
+    margin: 0 auto;
+    padding: 0;
+    display: flex; /*выравнивает элементы в строку*/
+}
+
+nav ul li {
+    margin-right: 20px; /*Отступы между элементами*/
+}
+
+nav ul li a {
+    text-decoration: none; /*Убирает подчеркивание*/
+    color: white;
+    font-size: 18px;
+    padding: 8px 16px;
+    display: block;
+    transition: background-color 0.3ms;
+}
+
+nav ul li a:hover {
+    background-color: #b91111;
+    border-radius: 10px;
+}
+
+nav ul li a.active {
+    background-color: #b91111;
+    border-radius: 10px;
+}
+
+/*стиль для контента*/
+.content {
+    text-align: center;
+    padding: 20px;
+
+}
+
+.content img {
+    width: 300px;
+    height: auto;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.services {
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services ul li {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.services ul li:before {
+    content: "✔️";
+    margin-right: 10px;
+    color: green;
+}
+
+.card-container {
+    display: flex; /*flexbox для выравнивания*/
+    flex-wrap: wrap; /*чтобы карточка переходила на новую строку если не помещается в блок*/
+    justify-content: center; /*центрирование контента карточек*/
+    gap: 20px; /*отсупы между карточками*/
+
+}
+
+.card {
+    background-color: rgba(253, 253, 253, 0.76);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-bottom: 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s; /*При наведении что то приосходить*/
+}
+
+.card:hover {
+    transform: scale(1.05); /*легкое увеличение карточки при наведении*/
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ddd;
+}
+
+
+/*modal window*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0; /* Помещает модалку справа */
+    width: 30%; /* Задайте ширину модального окна */
+    height: 100%; /* Растягивает на весь экран по высоте */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    justify-content: flex-start; /* Убираем центрирование */
+    align-items: flex-start; /* Убираем вертикальное центрирование */
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%; /* Растягиваем на ширину модалки */
+    max-width: none; /* Убираем ограничение ширины */
+    text-align: center;
+    height: 100%; /* Растягиваем на высоту модалки */
+    overflow-y: auto; /* Добавляем прокрутку при необходимости */
+}
+
+.close {
+    position: absolute;
+    top: 10px; /* Отступ сверху */
+    right: 10px; /* Отступ справа */
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+/*стикеры*/
+.sticker-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0;
+}
+
+.sticker {
+    width: 100%;
+    height: auto;
+    transition: transform 1s; /*плавная анимация прокрутки*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /*при наведении показывает пальчик*/
+}
+
+.sticker img {
+    width: 100%;
+    height: auto;
+    border-radius: 40%;
+    box-shadow: 0 4px 8px rgb(12, 12, 0);
+}
+
+/*эффект прокрутки при наведении*/
+.sticker:hover {
+    transform: rotate(360deg);
+}
+
+
+/*-----------------services.html--------------------------*/
+/*кнопка detail конец*/
+
+.btn {
+    display: inline-block;
+    padding: 20px 20px;
+    margin-top: auto;
+    color: rgba(7, 7, 7, 0.45);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #726b6b;
+}
+
+
+/*кнопка detail конец*/
+
+
+/*FEEDBACK START*/
+
+.feedback-form {
+    margin: 50px auto; /* Центрирование формы */
+    padding: 20px;
+    max-width: 400px; /* Максимальная ширина формы */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Центрирование содержимого */
+}
+
+.feedback-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feedback-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+    width: 90%; /* Полная ширина элементов формы */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.feedback-form textarea {
+    resize: vertical;
+}
+
+.feedback-form input[type='radio'],
+.feedback-form input[type='checkbox'] {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+}
+
+.feedback-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #888484;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feedback-form button:hover {
+    background-color: #3a1010;
+}
+
+
+/*FEEDBACK END*/
+
+
+/* detail services */
+.details {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.details img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.details p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #2d043e;
+}
+
+.details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.details ul li {
+    font-size: 18px;
+    color: #cf18b6;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.details ul li:before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    color: #087008;
+    font-size: 20px;
+}
+
+/*  detail end */
+
+
+/* about us*/
+.about-section {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    color: rgba(37, 8, 5, 0.63);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.team-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.team-section h2 {
+    font-size: 28px;
+    color: #2d043e;
+    margin-bottom: 20px;
+}
+
+.team_container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: #46374c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #8296ba;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #4CAF50;
+}
+
+
+/*about end*/
+
+
+/*footer style*/
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /*чтобы был постоянно внизу*/
+    clear: both; /*чтобы футер не перекрывал контент*/
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

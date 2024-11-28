@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Обратная связь</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--Навигационная панель-->
+<nav>
+    <!--Логотип-->
+    <div class="logo">
+        <a href="index.html"><img src="https://enactus.kg/wp-content/uploads/2024/05/kicza-.jpg" alt="логотип"></a>
+    </div>
+    <ul>
+        <li><a href="index.html" class="active">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="#">Контакты</a></li>
+        <li><a href="feedback.html">Обратная связь</a></li>
+    </ul>
+</nav>
+<!--Конец навигационной панели-->
+
+
+<div id="feedback" class="feedback-form">
+    <h2>Свяжитесь с нами</h2>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" placeholder="Укажите имя" required>
+
+        <label for="phone">Номер телефона:</label>
+        <input type="tel" id="phone" name="phone" placeholder="введите номер телефона" autocomplete="+996" required>
+
+        <label for="subject">Тема обращения:</label>
+        <select name="subject" id="subject">
+            <option value="web-development">Веб разработка</option>
+            <option value="mobile-development">Мобильная разработка</option>
+            <option value="other">Другое</option>
+        </select>
+
+        <label for="message">Описание:</label>
+        <textarea name="message" id="message" rows="4" placeholder="укажите ваше обращение"></textarea>
+
+        <label>Выберите тип связи:</label>
+        <label>
+            <input type="radio" name="phone_method" value="call">
+            Звонок
+        </label>
+        <label>
+            <input type="radio" name="email_method" value="email">
+            По почте
+        </label>
+
+        <label><input type="checkbox" name="privacy_policy" required>я согласен</label>
+
+        <button type="submit" class="btn">Отправить</button>
+
+    </form>
+</div>
+
+
+<!--Футер сайта-->
+<footer>
+    <p>Телефон: <a href="#">0550644770</a></p>
+    <p>Почта: <a href="#">kica@gmail.com</a></p>
+    <p>Адрес: Турусбекова 109/3</p>
+</footer>
+</body>
+</html>
