@@ -4,8 +4,20 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="persons.css">
+    <link rel="stylesheet" href="create_person.css">
 </head>
 <body>
+<h1>Создание людей</h1>
+<form id="addPersonForm">
+    <input type="text" id="name" placeholder="Укажите ваше имя" required>
+    <input type="number" id="age" placeholder="Укажите возраст" required>
+    <input type="email" id="email" placeholder="Укажите почту" required>
+    <input type="text" id="photo" placeholder="Укажите ссылку на фотку" required>
+    <button type="submit">Добавить</button>
+</form>
+
+
+
 <h1>Persons</h1>
 <div class="container" id="dataContainer"></div>
 <script src="persons.js"></script>
